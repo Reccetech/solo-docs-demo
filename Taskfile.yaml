@@ -1,0 +1,17 @@
+version: 3
+
+tasks:
+  default:
+    desc: "Preview documentation locally"
+    cmds:
+      - hugo server -D --baseURL http://localhost:1313/
+
+  build:
+    desc: "Build documentation for production"
+    cmds:
+      - hugo --cleanDestinationDir --minify
+
+  clean:
+    desc: "Clean build artifacts"
+    cmds:
+      - rm -rf public resources .hugo_build.lock

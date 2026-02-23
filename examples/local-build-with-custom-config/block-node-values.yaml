@@ -1,0 +1,49 @@
+resources:
+  requests:
+    cpu: "500m"
+    memory: "1Gi"
+  limits:
+    cpu: "1"
+    memory: "1.5Gi"
+
+blockNode:
+  # NOTE: for Block Node logging, see this link:
+  #  https://github.com/hiero-ledger/hiero-block-node/blob/v0.11.0/charts/block-node-server/values.yaml#L141-L168
+  # The logging configuration is mapped to this ConfigMap:
+  #  https://github.com/hiero-ledger/hiero-block-node/blob/v0.11.0/charts/block-node-server/templates/configmap-logging.yaml
+  # And, to this volume mount:
+  #  https://github.com/hiero-ledger/hiero-block-node/blob/v0.11.0/charts/block-node-server/templates/deployment.yaml#L33-L35
+  #  https://github.com/hiero-ledger/hiero-block-node/blob/v0.11.0/charts/block-node-server/templates/deployment.yaml#L89-L91
+  # The ConfigMap mount path:
+  #  https://github.com/hiero-ledger/hiero-block-node/blob/v0.11.0/charts/block-node-server/values.yaml#L140
+  # Should match:
+  #  https://github.com/hiero-ledger/hiero-block-node/blob/v0.11.0/charts/block-node-server/values.yaml#L76
+  config:
+    # The default, but it can be overridden:
+    # JAVA_TOOL_OPTIONS: "-Djava.util.logging.config.file=/opt/hiero/block-node/logs/config/logging.properties"
+    JAVA_OPTS: '-Xms1G -Xmx1G -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath="/tmp/dump.hprof"'
+    MESSAGING_BLOCK_ITEM_QUEUE_SIZE: "128"
+    MESSAGING_BLOCK_NOTIFICATION_QUEUE_SIZE: "16"
+    BACKFILL_FETCH_BATCH_SIZE: "5"
+  persistence:
+    archive:
+      size: 1Gi
+      # Optionally specify an existing PVC name instead of creating via volumeClaimTemplate
+      # existingClaim: "nano-archive-storage"
+    live:
+      size: 1Gi
+      # Optionally specify an existing PVC name instead of creating via volumeClaimTemplate
+      # existingClaim: "nano-live-pvc"
+    logging:
+      size: 1Gi
+      # Optionally specify an existing PVC name instead of creating via volumeClaimTemplate
+      # existingClaim: "nano-logging-pvc"
+
+kubepromstack:
+  enabled: false
+
+loki:
+  enabled: false
+
+promtail:
+  enabled: false

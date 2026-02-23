@@ -1,0 +1,99 @@
+# Yahcli Address Book Example
+
+This is an example of how to use Yahcli to pull the ledger and mirror node address book.  And to update the ledger address book.  It updates File 101 (the ledger address book file) and File 102 (the ledger node details file).
+
+NOTE: Mirror Node refers to File 102 as its address book.
+
+## Getting This Example
+
+### Download Archive
+
+You can download this example as a standalone archive from the [Solo releases page](https://github.com/hiero-ledger/solo/releases):
+
+```
+https://github.com/hiero-ledger/solo/releases/download/<release_version>/example-address-book.zip
+```
+
+### View on GitHub
+
+Browse the source code and configuration files for this example in the [GitHub repository](https://github.com/hiero-ledger/solo/tree/main/examples/address-book).
+
+## Usage
+
+To get the address book from the ledger, this requires a port forward to be setup on port 50211 to consensus node with node ID = 0.
+
+> \[!NOTE]
+> Due to file size, the Yahcli.jar file is stored with Git LFS (Large File Storage).  You will need to install Git LFS prior to cloning this repository to automatically download the Yahcli.jar file. For instructions on how to install see: <https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage>
+>
+> After cloning the repository, navigate to this directory and run the following command to pull the Yahcli.jar file:
+>
+> ```bash
+> git lfs install
+> git lfs pull
+> ```
+
+```bash
+# try and detect if the port forward is already setup
+netstat -na | grep 50211
+ps -ef | grep 50211 | grep -v grep
+
+# setup a port forward if you need to
+kubectl port-forward -n "${SOLO_NAMESPACE}" pod/network-node1-0 50211:50211
+```
+
+Navigate to the `examples/address-book` directory in the Solo repository:
+
+```bash
+cd <solo-root>/examples/address-book
+```
+
+If you don't already have a running Solo network, you can start one by running the following command:
+
+```bash
+task
+```
+
+To get the address book from the ledger, run the following command:
+
+```bash
+task get:ledger:addressbook
+```
+
+It will output the address book in JSON format to:
+
+* `examples/address-book/localhost/sysfiles/addressBook.json`
+* `examples/address-book/localhost/sysfiles/nodeDetails.json`
+
+You can update the address book files with your favorite text editor.
+
+Once the files are ready, you can upload them to the ledger by running the following command:
+
+```bash
+cd <solo-root>/examples/address-book
+task update:ledger:addressbook
+```
+
+To get the address book from the mirror node, run the following command:
+
+```bash
+cd <solo-root>/examples/address-book
+task get:mirror:addressbook
+```
+
+NOTE: Mirror Node may not pick up the changes automatically, it might require running some transactions through, example:
+
+```bash
+cd <solo-root>
+npm run solo -- ledger account create
+npm run solo -- ledger account create
+npm run solo -- ledger account create
+npm run solo -- ledger account create
+npm run solo -- ledger account create
+npm run solo -- ledger account update -n solo-e2e --account-id 0.0.1004 --hbar-amount 78910 
+```
+
+Stop the Solo network when you are done:
+
+```bash
+task destroy
+```

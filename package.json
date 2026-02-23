@@ -1,0 +1,29 @@
+{
+  "name": "solo-docs",
+  "version": "1.0.0",
+  "description": "Standalone documentation site for Hiero Solo CLI",
+  "scripts": {
+    "preview": "hugo server -D",
+    "build": "hugo --cleanDestinationDir --minify",
+    "format": "prettier --write \"content/**/*.md\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiero-ledger/solo-docs.git"
+  },
+  "keywords": [
+    "hiero",
+    "solo",
+    "documentation",
+    "hugo"
+  ],
+  "author": "Hiero Ledger",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "hugo-extended": "^0.145.0",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.4.2"
+  }
+}
