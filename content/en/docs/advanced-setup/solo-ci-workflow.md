@@ -1,6 +1,8 @@
 ---
 title: "Solo CI Workflow"
-weight: 130
+weight: 160
+aliases:
+  - /docs/solo-ci-workflow/
 description: >
     This document describes how to use Solo in CI.
 type: docs

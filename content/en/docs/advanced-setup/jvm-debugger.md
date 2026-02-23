@@ -1,6 +1,8 @@
 ---
 title: "Attach JVM Debugger and Retrieve Logs"
-weight: 100
+weight: 130
+aliases:
+  - /docs/jvm-debugger/
 description: >
     This document describes how to attach a JVM debugger to a running Hiero Consensus Node and retrieve logs for debugging purposes.
     It also provides instructions on how to save and reuse network state files.

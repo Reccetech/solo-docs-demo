@@ -1,6 +1,8 @@
 ---
 title: "Using Network Load Generator with Solo"
-weight: 110
+weight: 140
+aliases:
+  - /docs/solo-with-network-load-generator/
 description: >
     This document describes how to use Network Load Generator with Solo.
 type: docs
@@ -43,7 +45,7 @@ npx @hashgraph/solo:@latest one-shot single deploy
 
 See this example for more details: [examples/rapid-fire/](../../examples/rapid-fire/)
 
-A full list of all available `rapid-fire` commands can be found in [Solo CLI Commands](solo-commands.md/#rapid-fire)
+A full list of all available `rapid-fire` commands can be found in [Solo CLI Commands](../advanced-setup/solo-cli.md#rapid-fire)
 
 ## Test names and arguments
 

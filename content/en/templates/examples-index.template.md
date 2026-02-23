@@ -1,7 +1,6 @@
 ---
 title: Examples
 linkTitle: Examples
-menu: {main: {weight: 30, pre: <i class='fa-solid fa-address-book'></i>}}
 type: docs
 ---
 

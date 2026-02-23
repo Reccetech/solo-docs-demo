@@ -1,6 +1,8 @@
 ---
 title: "Hiero Consensus Node Platform Developer"
-weight: 80
+weight: 110
+aliases:
+  - /docs/platform-developer/
 description: >
     This page provides information for developers who want to build and run Hiero Consensus Node testing application locally.
 type: docs

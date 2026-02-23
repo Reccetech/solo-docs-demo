@@ -1,12 +1,6 @@
 baseURL: https://solo.hiero.org/
 title: Solo
 
-menu:
-  main:
-    - name: Release Notes
-      weight: 40
-      url: https://github.com/hiero-ledger/solo/releases
-
 module:
   # Uncomment the next line to build and serve using local docsy clone declared in the named Hugo workspace:
   # workspace: docsy.work

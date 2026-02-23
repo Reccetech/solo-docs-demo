@@ -1,7 +1,6 @@
 ---
 title: Development
 linkTitle: Development
-menu: {main: {weight: 20, pre: <i class='fa-solid fa-code'></i>}}
 type: docs
 ---
 

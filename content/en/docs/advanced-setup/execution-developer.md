@@ -1,6 +1,8 @@
 ---
 title: "Hiero Consensus Node Execution Developer"
-weight: 90
+weight: 120
+aliases:
+  - /docs/execution-developer/
 description: >
              Use port-forwarding to access Hiero Consensus Node network services.
 type: docs

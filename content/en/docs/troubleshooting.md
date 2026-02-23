@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-weight: 55
+weight: 1039
 description: >
   Solutions to common issues when using Solo, plus guidance on getting help.
 type: docs
@@ -229,10 +229,10 @@ kubectl logs -n "${SOLO_NAMESPACE}" <pod-name>
 
 ### 2. Documentation
 
-- [Solo User Guide](step-by-step-guide.md) - Basic setup and usage
-- [Advanced Deployments](advanced-deployments.md) - Complex deployment scenarios
+- [Simple Solo Setup](simple-setup/) - Basic setup and usage
+- [Advanced Deployments](advanced-setup/advanced-deployments.md) - Complex deployment scenarios
 - [FAQ](faq.md) - Common questions and answers
-- [CLI Commands](solo-commands.md) - Complete command reference
+- [CLI Commands](advanced-setup/solo-cli.md#solo-command-reference) - Complete command reference
 
 ### 3. GitHub Issues
 
@@ -292,4 +292,4 @@ Use these endpoints:
 
 ### Can I run Solo on a remote server?
 
-Yes, Solo can deploy to any Kubernetes cluster. See [Advanced Deployments](advanced-deployments.md#connecting-to-a-remote-cluster) for details.
+Yes, Solo can deploy to any Kubernetes cluster. See [Advanced Deployments](advanced-setup/advanced-deployments.md#connecting-to-a-remote-cluster) for details.

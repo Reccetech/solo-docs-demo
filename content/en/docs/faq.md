@@ -1,6 +1,6 @@
 ---
 title: "FAQ"
-weight: 50
+weight: 1038
 description: >
     Frequently asked questions about the Solo CLI tool.
 type: docs
@@ -32,8 +32,8 @@ The falcon deployment allows you to configure all network components (consensus 
 
 More documentation can be found here:
 
-* [Solo User Guide](step-by-step-guide/#one-shot-deployment)
-* [Solo CLI Commands](solo-commands/#one-shot-single)
+* [Simple Solo Setup](simple-setup/#deploying-your-network)
+* [Solo CLI Commands](advanced-setup/solo-cli/#solo-command-reference)
 
 ### How can I tear down a Solo network in a single command?
 
